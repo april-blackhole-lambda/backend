@@ -4,7 +4,8 @@
   "description": "April 2019 Build Week Project",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon index.js"
+    "server": "nodemon index.js",
+    "start": "node index.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
