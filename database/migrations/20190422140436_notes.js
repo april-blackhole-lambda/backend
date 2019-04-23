@@ -19,7 +19,7 @@ exports.up = function(knex, Promise) {
       .notNullable()
       .defaultTo(1) 
 
-      table.timestamp('created_at', { precision: 6})
+      table.timestamp('created_at', {precision: 3})
       .defaultTo(knex.fn.now())
 
       table.integer('user_id')
@@ -40,5 +40,5 @@ exports.down = function(knex, Promise) {
  
 // Folders table has a user_id FK, an ID and a name 
 
-// Notes table has an id, a title, a text, a category, a days_to_destruct, and a user_id 
+// Notes table has an id, a title, a text, a category, a days_to_destruct, a created_at timestamp, and a user_id 
 
