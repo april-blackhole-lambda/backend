@@ -50,13 +50,15 @@ router.post('/', (req, res) => {
 // UPDATE NOTE 
 
 router.put('/:id', (req, res) => {
+    const { id } = req.params; 
+    const change = req.body;
     db('notes')
-    .where({id: req.params.id})
-    .update(req.body)
+    .where({id})
+    .update(change)
     .then(count => {
         if (count>0) {
         db('notes')
-        .where({id: req.params.id})
+        .where({id})
         .first()
         .then(note => { 
         res.status(200)
