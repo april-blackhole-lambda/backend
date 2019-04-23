@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const jwtKey = require('../configuration/secrets.js');
 
 function authenticate(req, res, next) {
-    const token = req.get('Authorization');
+    const token = req.headers['authorization'];
 
     if(token) {
         jwt.verify(token, jwtKey, (error, decoded) => {

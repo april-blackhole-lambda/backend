@@ -4,7 +4,7 @@ const Notes = require('./Notes.js');
 const db = require('../database/dbConfig.js');
 
 // GET NOTES 
-router.get('/', authenticate, (req, res) => { 
+router.get('/', (req, res) => { 
     db('notes')
     .then(notes => {
         res.status(200)
@@ -17,7 +17,7 @@ router.get('/', authenticate, (req, res) => {
 })
 
 // POST NOTE
-router.post('/', authenticate, (req, res) => {
+router.post('/', (req, res) => {
     db('notes')
     .insert(req.body)
     .then(ids => {
@@ -39,7 +39,7 @@ router.post('/', authenticate, (req, res) => {
 
 // UPDATE NOTE 
 
-router.put('/:id', authenticate, (req, res) => {
+router.put('/:id', (req, res) => {
     db('notes')
     .where({id: req.params.id})
     .update(req.body)
@@ -62,7 +62,7 @@ router.put('/:id', authenticate, (req, res) => {
 
 // FORCE DELETE NOTES 
 
-router.delete('/:id', authenticate, (req, res) => {
+router.delete('/:id', (req, res) => {
     Notes.findById(req.params.id).del()
     .then(count => {
         if (count > 0) {
