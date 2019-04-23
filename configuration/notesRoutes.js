@@ -24,7 +24,11 @@ router.get('/:id', async (req, res) => {
         const note = await db('notes')
         .where({ id })
         .first(); 
+        if (note && user_id === note.user_id) {
         res.status(200).json(note); 
+        } else {
+            res.status(403).json({message: 'you are forbidden from reading this note'})
+        }
     } 
     catch (error) {
         res.status(500).json(error)
