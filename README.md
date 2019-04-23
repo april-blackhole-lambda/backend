@@ -9,13 +9,13 @@ This API is hosted at https://build-week-blackhole.herokuapp.com/.
 ### Register 
 > https://build-week-blackhole.herokuapp.com/api/register 
 
-This endpoint requires a POST request with a username and a password in JSON format.
+This endpoint requires a POST request with a username and a password in JSON format. Usernames must be unique. 
 
 Example: 
     { "username": "username",
     "password": "password" } 
 
-Usernames must be unique. 
+
 
 ### Login 
 > https://build-week-blackhole.herokuapp.com/api/login 
