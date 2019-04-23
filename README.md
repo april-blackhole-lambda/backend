@@ -22,7 +22,7 @@ This API is hosted at https://build-week-blackhole.herokuapp.com/.
 This endpoint requires a POST request with a username and a password in JSON format. Usernames must be unique. 
 
 Example: 
-    { "username": "username",
+    { "username": "username",  
     "password": "password" } 
 
 
@@ -32,7 +32,7 @@ Example:
 This endpoint requires a POST request with a username and a password in JSON format. The username and password **must have already been registered** or it will not work. 
 
 > Example: 
-    { "username": "username",
+    { "username": "username",  
     "password": "password" }
 
 ## Protected Route Endpoints 
@@ -49,13 +49,13 @@ The following endpoints require a token for access.
 > https://build-week-blackhole.herokuapp.com/api/notes/ 
 
 This endpoint requires a POST request with the following in JSON format: 
-* **title** 
+* **title**   
 This is what the note is called and should be a **string**. 
-* **text**
+* **text**  
 This is the body of the note and it should be **text**. 
 * **category**  
 This is the category or tag to assign the note and it should be a **string**. It will default to "uncategorized" if a category is not provided. 
-* **days_to_destruct** 
+* **days_to_destruct**   
 This is the number of days for the note to persist in the blackhole and it should be a positive **integer**. The maximum number of days the user can set is 24. It will default to 1 day if a number of days is not provided. 
 
 > Example:   

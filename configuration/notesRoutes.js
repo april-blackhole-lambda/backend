@@ -61,7 +61,7 @@ router.put('/:id', (req, res) => {
 // FORCE DELETE NOTES 
 
 router.delete('/:id', (req, res) => {
-    Notes.findById(req.params.id).del()
+   const note = Notes.findById(req.params.id)
     .then(count => {
         if (count > 0) {
             return res.status(204).json({message: 'Deleted!'})
