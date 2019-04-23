@@ -1,6 +1,6 @@
 # Blackhole API 
 
-This API is hosted at [https://build-week-blackhole.herokuapp.com/]. 
+This API is hosted at https://build-week-blackhole.herokuapp.com/. 
 
 ## Dependencies 
 
