@@ -3,6 +3,16 @@
 This API is hosted at https://build-week-blackhole.herokuapp.com/. 
 
 ## Dependencies 
+* bcryptjs
+* cors
+* dotenv
+* express
+* helmet
+* jsonwebtoken
+* knex
+* node
+* pg
+* sqlite3 
 
 ## Authentication Endpoints 
 
@@ -16,11 +26,10 @@ Example:
     "password": "password" } 
 
 
-
 ### Login 
 > https://build-week-blackhole.herokuapp.com/api/login 
 
-This endpoint requires a POST request with a username and a password in JSON format. The username and password **must have already been registered**. 
+This endpoint requires a POST request with a username and a password in JSON format. The username and password **must have already been registered** or it will not work. 
 
 Example: 
     { "username": "username",
@@ -33,7 +42,7 @@ The following endpoints require a token for access.
 ### Get Notes 
 > https://build-week-blackhole.herokuapp.com/api/notes/ 
 
-### Get Notes By Note Id 
+### Get Notes By Note ID 
 > https://build-week-blackhole.herokuapp.com/api/notes/:id 
 
 ### Post Note 
