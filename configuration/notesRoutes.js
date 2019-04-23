@@ -4,7 +4,7 @@ const Notes = require('./Notes.js');
 const db = require('../database/dbConfig.js');
 
 // GET NOTES 
-router.get('/', (req, res) => {
+router.get('/', authenticate, (req, res) => { 
     db('notes')
     .then(notes => {
         res.status(200)
