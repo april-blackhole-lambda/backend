@@ -1,19 +1,17 @@
 const { authenticate } = require('../authentication/authenticate.js');
 const router = require('express').Router(); 
-const Notes = require('./Notes.js'); 
+const Notes = require('./notes-helpers.js'); 
 const db = require('../database/dbConfig.js');
 
 // GET NOTES 
 router.get('/', (req, res) => { 
     db('notes')
-    .then(notes => {
-        res.status(200)
-        .json(notes)
-    }) 
-    .catch(error => {
-        res.status(500)
-        .json(error)
-    })
+}) 
+
+// GET NOTE BY ID 
+
+router.get('/', (req, res) => {
+    
 })
 
 // POST NOTE
