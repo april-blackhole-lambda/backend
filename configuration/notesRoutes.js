@@ -27,7 +27,8 @@ router.post('/', authenticate, (req, res) => {
         .first()
         .then(note => {
             res.status(200)
-            .json(note)
+            .json({message: 'your note was successfully created', 
+            note})
         })
     })
     .catch(error => {
