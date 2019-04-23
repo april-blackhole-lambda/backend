@@ -17,7 +17,10 @@ exports.up = function(knex, Promise) {
       table.integer('days_to_destruct')
       .unsigned()
       .notNullable()
-      .defaultTo(1)
+      .defaultTo(1) 
+
+      table.timestamp('created_at', { precision: 6})
+      .defaultTo(knex.fn.now())
 
       table.integer('user_id')
       .unsigned()
