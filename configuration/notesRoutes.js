@@ -36,21 +36,16 @@ router.get('/:id', async (req, res) => {
 })
 
 // // POST NOTE
-// router.post('/', async (req, res) => {  
-//     const note = req.body; 
-//     const daysToDestruct = await note.days_to_destruct; 
-//     try {
-//         const result = await db('notes').insert(note);
-//         res.status(200).json(result) 
-//         .then(
-//             setToDestructDb(daysToDestruct);
-//             res.status(202).json({message: `post will be deleted in ${daysToDestruct}`, id}))
-//             .catch(error => res.status(500).json(error))
-//         }
-//     catch { error => 
-//         res.status(500).json(error);
-//     }
-// });
+router.post('/', (req, res) => {  
+    const note = req.body;
+       db('notes').insert(note)
+        .then(
+        res.status(200).json(note) 
+        )
+        .catch (error => 
+        res.status(500).json(error)
+        );
+});
 
 // UPDATE NOTE 
 
