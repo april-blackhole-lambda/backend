@@ -1,6 +1,6 @@
 const { authenticate } = require('../authentication/authenticate.js');
 const router = require('express').Router(); 
-const { setToDestructDb, insert, findBy, findById, find } = require('./notes-helpers.js'); 
+const { setToDestructDb, insert, findBy, findById, find, deleteIn7Days } = require('./notes-helpers.js'); 
 const db = require('../database/dbConfig.js');
 
 // GET NOTES 
@@ -76,7 +76,6 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   const { id } = req.params;
-
   try {
     await db('notes')
     .where({id})

@@ -1,5 +1,6 @@
 const db = require('../database/dbConfig.js'); 
 
+
 function find() {
     return db('notes');
 } 
@@ -31,11 +32,18 @@ function setToDestructDb(days) {
     
 } // maximum 24 days per limits of JS
 
+function deleteIn7Days () {
+return db('notes')
+.where(knex.raw('DELETE FROM notes WHERE date < (CURDATE() - INTERVAL 7 DAY'))
+} 
+
+
 
 module.exports = {
 find, 
 findBy,
 insert,
 findById, 
-setToDestructDb 
+setToDestructDb,
+deleteIn7Days
 }
