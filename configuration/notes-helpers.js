@@ -26,9 +26,9 @@ return db('notes')
 
 function setToDestructDb(days) {
     setTimeout(() => {
-        find() 
-        .del()
-    }, days * 24 * 60 * 60 * 1000) // days * 86400000ms (i.e. 24 hours)
+    db('notes').where({id}).first().del()
+    }, days * 24 * 60 * 60 * 1000); // days * 86400000ms (i.e. 24 hours)
+    
 } // maximum 24 days per limits of JS
 
 
