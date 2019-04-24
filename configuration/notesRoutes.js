@@ -1,6 +1,5 @@
-const { authenticate } = require('../authentication/authenticate.js');
+
 const router = require('express').Router(); 
-const { setToDestructDb, checkExpiration, insert, findBy, findById, find, deleteIn7Days } = require('./notes-helpers.js'); 
 const db = require('../database/dbConfig.js');
 
 // GET NOTES 
