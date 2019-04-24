@@ -32,7 +32,7 @@ Example:
 This endpoint requires a POST request with a username and a password in JSON format. The username and password **must have already been registered** or it will not work. 
 
 > Example: 
-    { "username": "username",  
+    { "username": "username",    
     "password": "password" }
 
 ## Protected Route Endpoints 
@@ -40,17 +40,27 @@ This endpoint requires a POST request with a username and a password in JSON for
 The following endpoints require a token for access. 
 
 ### Get Notes 
-> https://build-week-blackhole.herokuapp.com/api/notes/ 
-This is the endpoint to get all notes pertaining to the individual user that is logged in. 
+> https://build-week-blackhole.herokuapp.com/api/notes/   
+
+This endpoint requires a **GET** request. 
+It should return an array of note objects with the following key-value pairs: 
+-- title
+-- category 
+-- text 
+-- timestamp
+-- days_to_destruct 
+-- user_id 
+-- id (this refers to the note id)
 
 ### Get Note By Note ID 
-> https://build-week-blackhole.herokuapp.com/api/notes/:id 
-This is the endpoint to get a note by the note's id.
+> https://build-week-blackhole.herokuapp.com/api/notes/:id   
+
+This endpoint requires a **GET** request. The 'id' refers to the note id. It should return the specific note object that corresponds to the note id.
 
 ### Post Note 
 > https://build-week-blackhole.herokuapp.com/api/notes/ 
 
-This endpoint requires a POST request with the following in JSON format: 
+This endpoint requires a **POST** request with the following in JSON format: 
 * **title**   
 This is what the note is called and should be a **string**. 
 * **text**  
@@ -66,14 +76,16 @@ This is the user_id -- This is sent back with the payload that includes the toke
     { "title": "My Note",  
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",   
     "category": "dummy-text",   
-    "days_to_destruct": 5, 
+    "days_to_destruct": 5,   
     "user_id": 1 }
 
 ### Update Note 
 > https://build-week-blackhole.herokuapp.com/api/notes/:id 
-This is the endpoint to update a note. It should be sent as a PUT request. 
+
+This endpoint requires a **PUT** request. The 'id' refers to the note id.
 
 ### Force Delete Note 
 > https://build-week-blackhole.herokuapp.com/api/notes/:id 
-This is the endpoint to force delete a note immediately. It should be sent as a DELETE request. 
+
+This endpoint requires a **DELETE** request. The 'id' refers to the note id.
 
