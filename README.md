@@ -41,9 +41,11 @@ The following endpoints require a token for access.
 
 ### Get Notes 
 > https://build-week-blackhole.herokuapp.com/api/notes/ 
+This is the endpoint to get all notes pertaining to the individual user that is logged in. 
 
 ### Get Note By Note ID 
 > https://build-week-blackhole.herokuapp.com/api/notes/:id 
+This is the endpoint to get a note by the note's id.
 
 ### Post Note 
 > https://build-week-blackhole.herokuapp.com/api/notes/ 
@@ -69,8 +71,9 @@ This is the user_id -- This is sent back with the payload that includes the toke
 
 ### Update Note 
 > https://build-week-blackhole.herokuapp.com/api/notes/:id 
+This is the endpoint to update a note. It should be sent as a PUT request. 
 
 ### Force Delete Note 
 > https://build-week-blackhole.herokuapp.com/api/notes/:id 
-
+This is the endpoint to force delete a note immediately. It should be sent as a DELETE request. 
 
