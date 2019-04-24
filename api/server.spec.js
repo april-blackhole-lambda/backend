@@ -11,7 +11,7 @@ describe('GET /', () => {
         }) 
     }) 
 
-    it('should return JSON', async () => {
+    it('should return text/html', async () => {
         const res = await request(server).get('/') 
 
         expect(res.type).toBe('text/html')
