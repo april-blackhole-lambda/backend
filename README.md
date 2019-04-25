@@ -13,6 +13,8 @@ This API is hosted at https://build-week-blackhole.herokuapp.com/.
 * node
 * pg
 * sqlite3 
+* jest 
+* supertest
 
 ## Authentication Endpoints 
 
